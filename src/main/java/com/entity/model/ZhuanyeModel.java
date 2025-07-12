@@ -1,15 +1,17 @@
-package com.entity.vo;
+package com.entity.model;
 
 import java.io.Serializable;
-
+ 
 
 /**
  * 专业
+ * 接收传参的实体类
+ * 取自ModelAndView 的model名称
  * @author 
  * @email 
  * @date
  */
-public class ZhuanyeVO implements Serializable {
+public class ZhuanyeModel  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 			

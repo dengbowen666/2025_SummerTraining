@@ -1,16 +1,17 @@
-package com.entity.vo;
+package com.entity.model;
 
 import java.io.Serializable;
 
 
 /**
  * 岗位信息
- * 手机端接口返回实体辅助类
- * @author
+ * 接收传参的实体类
+ * 取自ModelAndView 的model名称
+ * @author 
  * @email
  * @date
  */
-public class GangweixinxiVO implements Serializable {
+public class GangweixinxiModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 			

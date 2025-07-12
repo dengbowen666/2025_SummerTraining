@@ -1,4 +1,4 @@
-package com.entity.vo;
+package com.entity.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -9,11 +9,13 @@ import java.util.Date;
 
 /**
  * 申请岗位
+ * 接收传参的实体类
+ * 取自ModelAndView 的model名称
  * @author 
  * @email 
  * @date
  */
-public class ShenqinggangweiVO implements Serializable {
+public class ShenqinggangweiModel implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 			
