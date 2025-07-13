@@ -9,6 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.io.Serializable;
  
 
+
 /**
  * 岗位录用
  * 后端返回视图实体辅助类
