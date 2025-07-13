@@ -10,8 +10,7 @@ import java.lang.reflect.InvocationTargetException;
 
 /**
  * 用工部门
- * 后端返回视图实体辅助类   
- * （通常后端关联的表或者自定义的字段需要返回使用）
+ * 后端返回视图实体辅助类
  * @author 
  * @email 
  * @date
