@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.YonggongbumenDao">
+
+    <resultMap type="com.entity.YonggongbumenEntity" id="yonggongbumenMap">
+        <result property="bumenbianhao" column="bumenbianhao"/>
+        <result property="mima" column="mima"/>
+        <result property="bumenmingcheng" column="bumenmingcheng"/>
+        <result property="bumentupian" column="bumentupian"/>
+        <result property="bangongdidian" column="bangongdidian"/>
+        <result property="fuzejiaoshi" column="fuzejiaoshi"/>
+        <result property="lianxidianhua" column="lianxidianhua"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.YonggongbumenVO" >
+		SELECT * FROM yonggongbumen  yonggongbumen         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.YonggongbumenVO" >
+		SELECT  yonggongbumen.* FROM yonggongbumen  yonggongbumen 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.YonggongbumenView" >
+
+		SELECT  yonggongbumen.* FROM yonggongbumen  yonggongbumen 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.YonggongbumenView" >
+		SELECT * FROM yonggongbumen  yonggongbumen <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>

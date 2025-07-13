@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShenqinggangweiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShenqinggangweiEntity" id="shenqinggangweiMap">
+        <result property="gangweimingcheng" column="gangweimingcheng"/>
+        <result property="gangweiyaoqiu" column="gangweiyaoqiu"/>
+        <result property="gangweixingzhi" column="gangweixingzhi"/>
+        <result property="xinzidaiyu" column="xinzidaiyu"/>
+        <result property="renshu" column="renshu"/>
+        <result property="bumenbianhao" column="bumenbianhao"/>
+        <result property="bumenmingcheng" column="bumenmingcheng"/>
+        <result property="shenqingliyou" column="shenqingliyou"/>
+        <result property="shenqingjindu" column="shenqingjindu"/>
+        <result property="shenqingriqi" column="shenqingriqi"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="xingming" column="xingming"/>
+        <result property="yuanxi" column="yuanxi"/>
+        <result property="zhuanye" column="zhuanye"/>
+        <result property="shouji" column="shouji"/>
+        <result property="shifoupinkunsheng" column="shifoupinkunsheng"/>
+        <result property="crossuserid" column="crossuserid"/>
+        <result property="crossrefid" column="crossrefid"/>
+        <result property="sfsh" column="sfsh"/>
+        <result property="shhf" column="shhf"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShenqinggangweiVO" >
+		SELECT * FROM shenqinggangwei  shenqinggangwei         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShenqinggangweiVO" >
+		SELECT  shenqinggangwei.* FROM shenqinggangwei  shenqinggangwei 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShenqinggangweiView" >
+
+		SELECT  shenqinggangwei.* FROM shenqinggangwei  shenqinggangwei 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShenqinggangweiView" >
+		SELECT * FROM shenqinggangwei  shenqinggangwei <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+    <select id="selectValue" resultType="map" >
+        SELECT ${params.xColumn}, sum(${params.yColumn}) total FROM shenqinggangwei
+        <where> 1=1 ${ew.sqlSegment}</where>
+        group by ${params.xColumn}
+    </select>
+
+    <select id="selectTimeStatValue" resultType="map" >
+        <if test = 'params.timeStatType == "日"'>
+                SELECT DATE_FORMAT(${params.xColumn},'%Y-%m-%d') ${params.xColumn}, sum(${params.yColumn}) total FROM shenqinggangwei
+                <where> 1=1 ${ew.sqlSegment}</where>
+                group by DATE_FORMAT(${params.xColumn},'%Y-%m-%d')
+        </if>
+        <if test = 'params.timeStatType == "月"'>
+                SELECT DATE_FORMAT(${params.xColumn},'%Y-%m') ${params.xColumn}, sum(${params.yColumn}) total FROM shenqinggangwei
+                <where> 1=1 ${ew.sqlSegment}</where>
+                group by DATE_FORMAT(${params.xColumn},'%Y-%m')
+        </if>
+        <if test = 'params.timeStatType == "年"'>
+                SELECT DATE_FORMAT(${params.xColumn},'%Y') ${params.xColumn}, sum(${params.yColumn}) total FROM shenqinggangwei
+                <where> 1=1 ${ew.sqlSegment}</where>
+                group by DATE_FORMAT(${params.xColumn},'%Y')
+        </if>
+    </select>
+    
+    <select id="selectGroup" resultType="map" >
+        SELECT ${params.column} , count(1) total FROM shenqinggangwei
+        <where> 1=1 ${ew.sqlSegment}</where>
+        group by ${params.column}
+    </select>
+</mapper>
