@@ -11,8 +11,8 @@ import java.util.Date;
  * 学生
  * 接收传参的实体类
  * 取自ModelAndView 的model名称
- * @author
- * @email
+ * @author 
+ * @email 
  * @date
  */
 public class XueshengModel implements Serializable {
@@ -123,6 +123,56 @@ public class XueshengModel implements Serializable {
 	/**
 	 * 获取：手机
 	 */
-
+	public String getShouji() {
+		return shouji;
+	}
+				
+	
+	/**
+	 * 设置：院系
+	 */
+	 
+	public void setYuanxi(String yuanxi) {
+		this.yuanxi = yuanxi;
+	}
+	
+	/**
+	 * 获取：院系
+	 */
+	public String getYuanxi() {
+		return yuanxi;
+	}
+				
+	
+	/**
+	 * 设置：专业
+	 */
+	 
+	public void setZhuanye(String zhuanye) {
+		this.zhuanye = zhuanye;
+	}
+	
+	/**
+	 * 获取：专业
+	 */
+	public String getZhuanye() {
+		return zhuanye;
+	}
+				
+	
+	/**
+	 * 设置：出生日期
+	 */
+	 
+	public void setChushengriqi(Date chushengriqi) {
+		this.chushengriqi = chushengriqi;
+	}
+	
+	/**
+	 * 获取：出生日期
+	 */
+	public Date getChushengriqi() {
+		return chushengriqi;
+	}
 			
 }
