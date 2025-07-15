@@ -1,4 +1,4 @@
-package com.service.impl;
+package com.service;
 
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.service.IService;
