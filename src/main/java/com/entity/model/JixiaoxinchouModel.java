@@ -1,21 +1,23 @@
 package com.entity.model;
 
+import com.entity.JixiaoxinchouEntity;
+
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.io.Serializable;
 import java.util.Date;
-
+import org.springframework.format.annotation.DateTimeFormat;
+import java.io.Serializable;
+ 
 
 /**
  * 绩效薪酬
  * 接收传参的实体类
  * 取自ModelAndView 的model名称
- * @author
- * @email
+ * @author 
+ * @email 
  * @date
  */
-public class JixiaoxinchouModel implements Serializable {
+public class JixiaoxinchouModel  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 			

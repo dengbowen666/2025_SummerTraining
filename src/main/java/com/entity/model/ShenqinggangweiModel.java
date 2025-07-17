@@ -1,11 +1,13 @@
 package com.entity.model;
 
+import com.entity.ShenqinggangweiEntity;
+
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.io.Serializable;
 import java.util.Date;
-
+import org.springframework.format.annotation.DateTimeFormat;
+import java.io.Serializable;
+ 
 
 /**
  * 申请岗位
@@ -15,7 +17,7 @@ import java.util.Date;
  * @email 
  * @date
  */
-public class ShenqinggangweiModel implements Serializable {
+public class ShenqinggangweiModel  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 			

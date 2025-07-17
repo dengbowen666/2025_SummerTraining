@@ -1,21 +1,41 @@
 package com.controller;
 
-import com.annotation.IgnoreAuth;
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.mapper.Wrapper;
-import com.entity.ShenqinggangweiEntity;
-import com.entity.view.ShenqinggangweiView;
-import com.service.ShenqinggangweiService;
-import com.utils.MPUtil;
-import com.utils.PageUtils;
-import com.utils.R;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Date;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+
+import com.utils.ValidatorUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.annotation.IgnoreAuth;
 
-import javax.servlet.http.HttpServletRequest;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import com.entity.ShenqinggangweiEntity;
+import com.entity.view.ShenqinggangweiView;
+
+import com.service.ShenqinggangweiService;
+import com.service.TokenService;
+import com.utils.PageUtils;
+import com.utils.R;
+import com.utils.MD5Util;
+import com.utils.MPUtil;
+import com.utils.CommonUtil;
+import java.io.IOException;
 
 /**
  * 申请岗位
@@ -30,6 +50,9 @@ public class ShenqinggangweiController {
     @Autowired
     private ShenqinggangweiService shenqinggangweiService;
 
+
+
+    
 
 
     /**
@@ -106,6 +129,8 @@ public class ShenqinggangweiController {
         ShenqinggangweiEntity shenqinggangwei = shenqinggangweiService.selectById(id);
         return R.ok().put("data", shenqinggangwei);
     }
+    
+
 
 
     /**
@@ -202,6 +227,11 @@ public class ShenqinggangweiController {
 		int count = shenqinggangweiService.selectCount(wrapper);
 		return R.ok().put("count", count);
 	}
+	
+	
+
+
+
 
 
     /**

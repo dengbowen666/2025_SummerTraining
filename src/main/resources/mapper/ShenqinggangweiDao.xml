@@ -3,6 +3,7 @@
 
 <mapper namespace="com.dao.ShenqinggangweiDao">
 
+	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.ShenqinggangweiEntity" id="shenqinggangweiMap">
         <result property="gangweimingcheng" column="gangweimingcheng"/>
         <result property="gangweiyaoqiu" column="gangweiyaoqiu"/>

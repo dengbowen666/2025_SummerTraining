@@ -1,7 +1,14 @@
 package com.entity.vo;
 
-import java.io.Serializable;
+import com.entity.ZhuanyeEntity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.io.Serializable;
+ 
 
 /**
  * 专业
@@ -9,7 +16,7 @@ import java.io.Serializable;
  * @email 
  * @date
  */
-public class ZhuanyeVO implements Serializable {
+public class ZhuanyeVO  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 			

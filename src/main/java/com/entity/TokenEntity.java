@@ -1,14 +1,14 @@
 package com.entity;
 
+import java.io.Serializable;
+import java.util.Date;
+
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.baomidou.mybatisplus.enums.IdType;
 
-import java.io.Serializable;
-import java.util.Date;
-
 /** 
- * token表 by wcs
+ * token表
  */
 @TableName("token")
 public class TokenEntity implements Serializable {
@@ -116,7 +116,7 @@ public class TokenEntity implements Serializable {
 		this.username = username;
 	}
 
-	public TokenEntity(Long userid, String username, String tablename, String role, String token, Date expiratedtime) {
+	public TokenEntity(Long userid, String username, String tablename,String role, String token, Date expiratedtime) {
 		super();
 		this.userid = userid;
 		this.username = username;

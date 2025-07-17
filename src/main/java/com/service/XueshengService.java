@@ -2,14 +2,13 @@ package com.service;
 
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.service.IService;
-import com.entity.XueshengEntity;
-import com.entity.view.XueshengView;
-import com.entity.vo.XueshengVO;
 import com.utils.PageUtils;
-import org.apache.ibatis.annotations.Param;
-
+import com.entity.XueshengEntity;
 import java.util.List;
 import java.util.Map;
+import com.entity.vo.XueshengVO;
+import org.apache.ibatis.annotations.Param;
+import com.entity.view.XueshengView;
 
 
 /**
@@ -32,5 +31,6 @@ public interface XueshengService extends IService<XueshengEntity> {
    	XueshengView selectView(@Param("ew") Wrapper<XueshengEntity> wrapper);
    	
    	PageUtils queryPage(Map<String, Object> params, Wrapper<XueshengEntity> wrapper);
+   	
 
 }

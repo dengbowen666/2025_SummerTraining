@@ -1,20 +1,22 @@
 package com.service.impl;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import org.springframework.stereotype.Service;
+import java.util.Map;
+import java.util.List;
+
 import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.dao.ZhuanyeDao;
-import com.entity.ZhuanyeEntity;
-import com.entity.view.ZhuanyeView;
-import com.entity.vo.ZhuanyeVO;
-import com.service.ZhuanyeService;
 import com.utils.PageUtils;
 import com.utils.Query;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
+
+import com.dao.ZhuanyeDao;
+import com.entity.ZhuanyeEntity;
+import com.service.ZhuanyeService;
+import com.entity.vo.ZhuanyeVO;
+import com.entity.view.ZhuanyeView;
 
 @Service("zhuanyeService")
 public class ZhuanyeServiceImpl extends ServiceImpl<ZhuanyeDao, ZhuanyeEntity> implements ZhuanyeService {
@@ -56,5 +58,6 @@ public class ZhuanyeServiceImpl extends ServiceImpl<ZhuanyeDao, ZhuanyeEntity> i
 	public ZhuanyeView selectView(Wrapper<ZhuanyeEntity> wrapper) {
 		return baseMapper.selectView(wrapper);
 	}
+
 
 }

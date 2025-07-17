@@ -1,11 +1,12 @@
 package com.entity.view;
 
-import com.baomidou.mybatisplus.annotations.TableName;
 import com.entity.ZhuanyeEntity;
+
+import com.baomidou.mybatisplus.annotations.TableName;
 import org.apache.commons.beanutils.BeanUtils;
+import java.lang.reflect.InvocationTargetException;
 
 import java.io.Serializable;
-import java.lang.reflect.InvocationTargetException;
  
 
 /**

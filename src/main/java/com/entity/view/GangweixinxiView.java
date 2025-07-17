@@ -1,12 +1,13 @@
 package com.entity.view;
 
-import com.baomidou.mybatisplus.annotations.TableName;
 import com.entity.GangweixinxiEntity;
-import org.apache.commons.beanutils.BeanUtils;
 
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotations.TableName;
+import org.apache.commons.beanutils.BeanUtils;
 import java.lang.reflect.InvocationTargetException;
 
+import java.io.Serializable;
+ 
 
 /**
  * 岗位信息
@@ -17,7 +18,7 @@ import java.lang.reflect.InvocationTargetException;
  * @date
  */
 @TableName("gangweixinxi")
-public class GangweixinxiView extends GangweixinxiEntity implements Serializable {
+public class GangweixinxiView  extends GangweixinxiEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public GangweixinxiView(){

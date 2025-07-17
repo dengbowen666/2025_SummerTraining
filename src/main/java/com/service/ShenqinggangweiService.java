@@ -2,14 +2,13 @@ package com.service;
 
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.service.IService;
-import com.entity.ShenqinggangweiEntity;
-import com.entity.view.ShenqinggangweiView;
-import com.entity.vo.ShenqinggangweiVO;
 import com.utils.PageUtils;
-import org.apache.ibatis.annotations.Param;
-
+import com.entity.ShenqinggangweiEntity;
 import java.util.List;
 import java.util.Map;
+import com.entity.vo.ShenqinggangweiVO;
+import org.apache.ibatis.annotations.Param;
+import com.entity.view.ShenqinggangweiView;
 
 
 /**
@@ -40,3 +39,4 @@ public interface ShenqinggangweiService extends IService<ShenqinggangweiEntity> 
     
     List<Map<String, Object>> selectGroup(Map<String, Object> params, Wrapper<ShenqinggangweiEntity> wrapper);
 }
+

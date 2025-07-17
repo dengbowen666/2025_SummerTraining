@@ -1,20 +1,22 @@
 package com.service.impl;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import org.springframework.stereotype.Service;
+import java.util.Map;
+import java.util.List;
+
 import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.dao.ShenqinggangweiDao;
-import com.entity.ShenqinggangweiEntity;
-import com.entity.view.ShenqinggangweiView;
-import com.entity.vo.ShenqinggangweiVO;
-import com.service.ShenqinggangweiService;
 import com.utils.PageUtils;
 import com.utils.Query;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
+
+import com.dao.ShenqinggangweiDao;
+import com.entity.ShenqinggangweiEntity;
+import com.service.ShenqinggangweiService;
+import com.entity.vo.ShenqinggangweiVO;
+import com.entity.view.ShenqinggangweiView;
 
 @Service("shenqinggangweiService")
 public class ShenqinggangweiServiceImpl extends ServiceImpl<ShenqinggangweiDao, ShenqinggangweiEntity> implements ShenqinggangweiService {

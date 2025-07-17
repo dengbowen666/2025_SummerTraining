@@ -1,7 +1,13 @@
 package com.entity.model;
 
-import java.io.Serializable;
+import com.entity.GangweixinxiEntity;
 
+import com.baomidou.mybatisplus.annotations.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+import java.io.Serializable;
+ 
 
 /**
  * 岗位信息
@@ -11,7 +17,7 @@ import java.io.Serializable;
  * @email
  * @date
  */
-public class GangweixinxiModel implements Serializable {
+public class GangweixinxiModel  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 			
