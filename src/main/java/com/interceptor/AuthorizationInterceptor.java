@@ -1,19 +1,24 @@
 package com.interceptor;
 
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 import com.alibaba.fastjson.JSONObject;
-import com.annotation.IgnoreAuth;
-import com.entity.TokenEntity;
-import com.service.TokenService;
-import com.utils.R;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
+import com.annotation.IgnoreAuth;
+import com.entity.EIException;
+import com.entity.TokenEntity;
+import com.service.TokenService;
+import com.utils.R;
 
 /**
  * 权限(Token)验证 by dbw wcs

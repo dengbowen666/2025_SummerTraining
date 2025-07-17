@@ -1,14 +1,15 @@
 package com.dao;
 
+import com.entity.XueshengEntity;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
+import java.util.List;
+import java.util.Map;
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.plugins.pagination.Pagination;
-import com.entity.XueshengEntity;
-import com.entity.view.XueshengView;
-import com.entity.vo.XueshengVO;
-import org.apache.ibatis.annotations.Param;
 
-import java.util.List;
+import org.apache.ibatis.annotations.Param;
+import com.entity.vo.XueshengVO;
+import com.entity.view.XueshengView;
 
 
 /**
@@ -19,15 +20,15 @@ import java.util.List;
  * @date
  */
 public interface XueshengDao extends BaseMapper<XueshengEntity> {
-
+	
 	List<XueshengVO> selectListVO(@Param("ew") Wrapper<XueshengEntity> wrapper);
-
+	
 	XueshengVO selectVO(@Param("ew") Wrapper<XueshengEntity> wrapper);
-
+	
 	List<XueshengView> selectListView(@Param("ew") Wrapper<XueshengEntity> wrapper);
 
 	List<XueshengView> selectListView(Pagination page, @Param("ew") Wrapper<XueshengEntity> wrapper);
-
+	
 	XueshengView selectView(@Param("ew") Wrapper<XueshengEntity> wrapper);
 
 }

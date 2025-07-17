@@ -1,20 +1,22 @@
 package com.service.impl;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import org.springframework.stereotype.Service;
+import java.util.Map;
+import java.util.List;
+
 import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.dao.GangweixinxiDao;
-import com.entity.GangweixinxiEntity;
-import com.entity.view.GangweixinxiView;
-import com.entity.vo.GangweixinxiVO;
-import com.service.GangweixinxiService;
 import com.utils.PageUtils;
 import com.utils.Query;
-import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Map;
+
+import com.dao.GangweixinxiDao;
+import com.entity.GangweixinxiEntity;
+import com.service.GangweixinxiService;
+import com.entity.vo.GangweixinxiVO;
+import com.entity.view.GangweixinxiView;
 
 @Service("gangweixinxiService")
 public class GangweixinxiServiceImpl extends ServiceImpl<GangweixinxiDao, GangweixinxiEntity> implements GangweixinxiService {

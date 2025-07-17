@@ -1,24 +1,41 @@
 package com.controller;
 
-import com.annotation.IgnoreAuth;
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.mapper.Wrapper;
-import com.entity.YuanxiEntity;
-import com.entity.view.YuanxiView;
-import com.service.YuanxiService;
-import com.utils.MPUtil;
-import com.utils.PageUtils;
-import com.utils.R;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Map;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Date;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+
+import com.utils.ValidatorUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.annotation.IgnoreAuth;
+
+import com.entity.YuanxiEntity;
+import com.entity.view.YuanxiView;
+
+import com.service.YuanxiService;
+import com.service.TokenService;
+import com.utils.PageUtils;
+import com.utils.R;
+import com.utils.MD5Util;
+import com.utils.MPUtil;
+import com.utils.CommonUtil;
+import java.io.IOException;
 
 /**
  * 院系
@@ -32,6 +49,7 @@ import java.util.Map;
 public class YuanxiController {
     @Autowired
     private YuanxiService yuanxiService;
+
 
     /**
      * 后端列表

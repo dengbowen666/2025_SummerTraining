@@ -1,12 +1,13 @@
 package com.entity.view;
 
-import com.baomidou.mybatisplus.annotations.TableName;
 import com.entity.YonggongbumenEntity;
-import org.apache.commons.beanutils.BeanUtils;
 
-import java.io.Serializable;
+import com.baomidou.mybatisplus.annotations.TableName;
+import org.apache.commons.beanutils.BeanUtils;
 import java.lang.reflect.InvocationTargetException;
 
+import java.io.Serializable;
+ 
 
 /**
  * 用工部门
@@ -16,7 +17,7 @@ import java.lang.reflect.InvocationTargetException;
  * @date
  */
 @TableName("yonggongbumen")
-public class YonggongbumenView extends YonggongbumenEntity implements Serializable {
+public class YonggongbumenView  extends YonggongbumenEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public YonggongbumenView(){

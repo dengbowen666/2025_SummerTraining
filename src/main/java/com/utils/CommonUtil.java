@@ -1,12 +1,11 @@
 package com.utils;
 
+import java.util.Random;
+import org.springframework.stereotype.Component;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.ss.usermodel.Cell;
-import org.springframework.stereotype.Component;
-
 import java.text.DecimalFormat;
 import java.util.Objects;
-import java.util.Random;
 
 @Component
 public class CommonUtil {

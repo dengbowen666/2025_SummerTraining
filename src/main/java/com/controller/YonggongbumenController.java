@@ -1,25 +1,41 @@
 package com.controller;
 
-import com.annotation.IgnoreAuth;
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.mapper.Wrapper;
-import com.entity.YonggongbumenEntity;
-import com.entity.view.YonggongbumenView;
-import com.service.TokenService;
-import com.service.YonggongbumenService;
-import com.utils.MPUtil;
-import com.utils.PageUtils;
-import com.utils.R;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Map;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Date;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+
+import com.utils.ValidatorUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.annotation.IgnoreAuth;
+
+import com.entity.YonggongbumenEntity;
+import com.entity.view.YonggongbumenView;
+
+import com.service.YonggongbumenService;
+import com.service.TokenService;
+import com.utils.PageUtils;
+import com.utils.R;
+import com.utils.MD5Util;
+import com.utils.MPUtil;
+import com.utils.CommonUtil;
+import java.io.IOException;
 
 /**
  * 用工部门
@@ -35,9 +51,11 @@ public class YonggongbumenController {
     private YonggongbumenService yonggongbumenService;
 
 
+
+    
 	@Autowired
 	private TokenService tokenService;
-
+	
 	/**
 	 * 登录
 	 */
@@ -51,7 +69,7 @@ public class YonggongbumenController {
 		String token = tokenService.generateToken(user.getId(), username,"yonggongbumen",  "用工部门" );
 		return R.ok().put("token", token);
 	}
-
+	
 	/**
      * 注册
      */
@@ -69,7 +87,7 @@ public class YonggongbumenController {
         return R.ok();
     }
 
-
+	
 	/**
 	 * 退出
 	 */
@@ -78,7 +96,7 @@ public class YonggongbumenController {
 		request.getSession().invalidate();
 		return R.ok("退出成功");
 	}
-
+	
 	/**
      * 获取用户的session用户信息
      */
@@ -88,7 +106,7 @@ public class YonggongbumenController {
         YonggongbumenEntity user = yonggongbumenService.selectById(id);
         return R.ok().put("data", user);
     }
-
+    
     /**
      * 密码重置
      */
@@ -109,7 +127,7 @@ public class YonggongbumenController {
      * 后端列表
      */
     @RequestMapping("/page")
-    public R page(@RequestParam Map<String, Object> params,YonggongbumenEntity yonggongbumen,
+    public R page(@RequestParam Map<String, Object> params,YonggongbumenEntity yonggongbumen, 
 		HttpServletRequest request){
 
         EntityWrapper<YonggongbumenEntity> ew = new EntityWrapper<YonggongbumenEntity>();
@@ -118,13 +136,13 @@ public class YonggongbumenController {
 		request.setAttribute("data", page);
         return R.ok().put("data", page);
     }
-
+    
     /**
      * 前端列表
      */
 	@IgnoreAuth
     @RequestMapping("/list")
-    public R list(@RequestParam Map<String, Object> params,YonggongbumenEntity yonggongbumen,
+    public R list(@RequestParam Map<String, Object> params,YonggongbumenEntity yonggongbumen, 
 		HttpServletRequest request){
         EntityWrapper<YonggongbumenEntity> ew = new EntityWrapper<YonggongbumenEntity>();
 
@@ -139,7 +157,7 @@ public class YonggongbumenController {
     @RequestMapping("/lists")
     public R list( YonggongbumenEntity yonggongbumen){
        	EntityWrapper<YonggongbumenEntity> ew = new EntityWrapper<YonggongbumenEntity>();
-      	ew.allEq(MPUtil.allEQMapPre( yonggongbumen, "yonggongbumen"));
+      	ew.allEq(MPUtil.allEQMapPre( yonggongbumen, "yonggongbumen")); 
         return R.ok().put("data", yonggongbumenService.selectListView(ew));
     }
 
@@ -149,11 +167,11 @@ public class YonggongbumenController {
     @RequestMapping("/query")
     public R query(YonggongbumenEntity yonggongbumen){
         EntityWrapper< YonggongbumenEntity> ew = new EntityWrapper< YonggongbumenEntity>();
- 		ew.allEq(MPUtil.allEQMapPre( yonggongbumen, "yonggongbumen"));
+ 		ew.allEq(MPUtil.allEQMapPre( yonggongbumen, "yonggongbumen")); 
 		YonggongbumenView yonggongbumenView =  yonggongbumenService.selectView(ew);
 		return R.ok("查询用工部门成功").put("data", yonggongbumenView);
     }
-
+	
     /**
      * 后端详情
      */
@@ -172,6 +190,8 @@ public class YonggongbumenController {
         YonggongbumenEntity yonggongbumen = yonggongbumenService.selectById(id);
         return R.ok().put("data", yonggongbumen);
     }
+    
+
 
 
     /**
@@ -190,7 +210,7 @@ public class YonggongbumenController {
         yonggongbumenService.insert(yonggongbumen);
         return R.ok();
     }
-
+    
     /**
      * 前端保存
      */
@@ -218,7 +238,7 @@ public class YonggongbumenController {
         yonggongbumenService.updateById(yonggongbumen);//全部更新
         return R.ok();
     }
-
+    
 
     /**
      * 删除
@@ -228,16 +248,16 @@ public class YonggongbumenController {
         yonggongbumenService.deleteBatchIds(Arrays.asList(ids));
         return R.ok();
     }
-
+    
     /**
      * 提醒接口
      */
 	@RequestMapping("/remind/{columnName}/{type}")
-	public R remindCount(@PathVariable("columnName") String columnName, HttpServletRequest request,
+	public R remindCount(@PathVariable("columnName") String columnName, HttpServletRequest request, 
 						 @PathVariable("type") String type,@RequestParam Map<String, Object> map) {
 		map.put("column", columnName);
 		map.put("type", type);
-
+		
 		if(type.equals("2")) {
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Calendar c = Calendar.getInstance();
@@ -245,7 +265,7 @@ public class YonggongbumenController {
 			Date remindEndDate = null;
 			if(map.get("remindstart")!=null) {
 				Integer remindStart = Integer.parseInt(map.get("remindstart").toString());
-				c.setTime(new Date());
+				c.setTime(new Date()); 
 				c.add(Calendar.DAY_OF_MONTH,remindStart);
 				remindStartDate = c.getTime();
 				map.put("remindstart", sdf.format(remindStartDate));
@@ -258,7 +278,7 @@ public class YonggongbumenController {
 				map.put("remindend", sdf.format(remindEndDate));
 			}
 		}
-
+		
 		Wrapper<YonggongbumenEntity> wrapper = new EntityWrapper<YonggongbumenEntity>();
 		if(map.get("remindstart")!=null) {
 			wrapper.ge(columnName, map.get("remindstart"));

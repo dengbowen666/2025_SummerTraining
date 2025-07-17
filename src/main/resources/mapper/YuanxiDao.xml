@@ -3,6 +3,7 @@
 
 <mapper namespace="com.dao.YuanxiDao">
 
+	<!-- 可根据自己的需求，是否要使用 -->
     <resultMap type="com.entity.YuanxiEntity" id="yuanxiMap">
         <result property="yuanxi" column="yuanxi"/>
     </resultMap>

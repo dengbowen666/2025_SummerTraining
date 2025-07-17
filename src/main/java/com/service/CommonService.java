@@ -2,7 +2,6 @@ package com.service;
 
 import java.util.List;
 import java.util.Map;
-
 //by wcs
 public interface CommonService {
 	List<String> getOption(Map<String, Object> params);

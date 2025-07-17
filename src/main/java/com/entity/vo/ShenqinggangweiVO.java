@@ -1,19 +1,23 @@
 package com.entity.vo;
 
+import com.entity.ShenqinggangweiEntity;
+
+import com.baomidou.mybatisplus.annotations.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
-import java.util.Date;
-
+ 
 
 /**
  * 申请岗位
+ * （主要作用去除一些不必要的字段）
  * @author 
  * @email 
  * @date
  */
-public class ShenqinggangweiVO implements Serializable {
+public class ShenqinggangweiVO  implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	 			

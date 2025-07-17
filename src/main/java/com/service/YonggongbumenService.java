@@ -2,14 +2,13 @@ package com.service;
 
 import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.baomidou.mybatisplus.service.IService;
-import com.entity.YonggongbumenEntity;
-import com.entity.view.YonggongbumenView;
-import com.entity.vo.YonggongbumenVO;
 import com.utils.PageUtils;
-import org.apache.ibatis.annotations.Param;
-
+import com.entity.YonggongbumenEntity;
 import java.util.List;
 import java.util.Map;
+import com.entity.vo.YonggongbumenVO;
+import org.apache.ibatis.annotations.Param;
+import com.entity.view.YonggongbumenView;
 
 
 /**
@@ -32,5 +31,6 @@ public interface YonggongbumenService extends IService<YonggongbumenEntity> {
    	YonggongbumenView selectView(@Param("ew") Wrapper<YonggongbumenEntity> wrapper);
    	
    	PageUtils queryPage(Map<String, Object> params, Wrapper<YonggongbumenEntity> wrapper);
+   	
 
 }
